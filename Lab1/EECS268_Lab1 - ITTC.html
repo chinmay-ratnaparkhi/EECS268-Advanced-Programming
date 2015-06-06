@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1 -->
+<html lang="en" dir="ltr" class="client-js" adlesseunifierdata="[&quot;{\&quot;v\&quot;:false,\&quot;id\&quot;:\&quot;phahnhbgfdhgobenebnjbgmacgpbfaag\&quot;,\&quot;name\&quot;:\&quot;FastestTube\&quot;,\&quot;isComponentMode\&quot;:true}&quot;]"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8"><title>EECS268:Lab1 - ITTC</title>
+<meta name="generator" content="MediaWiki 1.22.6">
+<link rel="shortcut icon" href="https://wiki.ittc.ku.edu/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.ittc.ku.edu/ittc_wiki/opensearch_desc.php" title="ITTC (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.ittc.ku.edu/ittc_wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="ITTC Atom feed" href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="https://wiki.ittc.ku.edu/ittc_wiki/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&only=styles&skin=vector&*">
+<style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(https://wiki.ittc.ku.edu/ittc_wiki/resources/mediawiki.action/images/green-checkmark.png?2014-04-24T21:25:00Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-css:7:bf45faadf28765f94fd9e95d9134c854 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-css:7:a05240db80ac5e3f11e2efd1975ca944 */</style>
+
+<script src="./EECS268_Lab1 - ITTC_files/load.php"></script><script src="./EECS268_Lab1 - ITTC_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"EECS268:Lab1","wgTitle":"EECS268:Lab1","wgCurRevisionId":16678,"wgRevisionId":16678,"wgArticleId":2913,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"EECS268:Lab1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,
+"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wikidb-ittc_:resourceloader:filter:minify-js:7:5a69c7e0fa6557851b6dea8a62efaffb */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script><script src="./EECS268_Lab1 - ITTC_files/load(2).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/ittc_wiki/skins/vector/csshover.min.htc")}</style><![endif]--><script async="" src="./EECS268_Lab1 - ITTC_files/load(3).php"></script><style type="text/css">.adlesse-hidden{display:none!important;}				.adlesse-invisible{visibility:hidden!important;}				.adlesse-actionpanel{padding:0!important; margin:0!important; position:absolute!important; z-index:3999!important; border:solid #000000 1px!important; background:#ffffff!important; font-family:sans-serif!important; font-weight:normal!important; font-size:10px!important; text-decoration:none!important; color:#000000!important;}				.adlesse-actionpanel a{padding:0!important; margin:0!important; background:none repeat scroll 0 0 transparent!important; font-family:sans-serif!important; font-weight:normal!important; font-size:10px!important; text-decoration:none!important; color: #000000!important; display: inline-block !important }				.adlesse-actionpanel a:hover{text-decoration:underline!important; }				.adlesse-trans-65{opacity:0.65; filter:alpha(opacity=65); -moz-opacity:0.65; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=65); -khtml-opacity: 0.65; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=65)';}				.adlesse-rounded-corner{-moz-border-radius:3px; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;}								.adlesse-actionpanel-menu{position:absolute!important; z-index:3999!important;background:#ffffff!important; font-family:sans-serif!important; font-weight:normal!important; font-size:10px!important; text-decoration:none!important; color: #000000!important; border:1px solid #000000;text-align:center!important;padding:0!important; margin:5px!important; margin-top:1px!important;min-width:55px;}				.adlesse-actionpanel-menu-h {margin: 5px;list-style-type: none;}				.adlesse-actionpanel-menu-v {list-style-type: none;} 				.adlesse-actionpanel-menu-h li{background:#ffffff; cursor:pointer; display: inline-block; padding: 5px; zoom: 1;*display: inline;border-right:1px solid #cccccc}				.adlesse-actionpanel-menu-v li{background:#ffffff;cursor:pointer;padding:3px; border-bottom: 1px solid #000000;}								.adlesse-widget-div{}				.adlesse-widget-iframe{border:0px; position: relative; z-index: 205!important}</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-EECS268_Lab1 skin-vector action-view vector-animateLayout" promptdialogcheckdone="1">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">EECS268:Lab1</span></h1>
+			<div id="bodyContent">
+								<div id="siteSub">From ITTC</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#mw-navigation">navigation</a>, 					<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table style="padding:0.3em; float:right; margin-left:15px; border:1px solid #A3B1BF; background:#f5faff; text-align:center; font-size:95%; line-height:1.5em;">
+<tbody><tr>
+<th style="background:#cee0f2; padding:0.3em; text-align:center;">Navigation
+</th></tr>
+<tr>
+<td><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268" title="EECS268">Home</a>
+</td></tr>
+<tr>
+<td style="padding:0.1em; font-size:0.9em; background-color:#cee0f2;">Information
+</td></tr>
+<tr>
+<td>
+<p><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Syllabus" title="EECS268:Syllabus">Syllabus</a><br>
+<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Schedule" title="EECS268:Schedule">Schedule</a><br>
+</p>
+</td></tr>
+<tr>
+<td style="padding:0.1em; font-size:0.9em; background-color:#cee0f2;">Classwork
+</td></tr>
+<tr>
+<td>
+<p><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Labs" title="EECS268:Labs">Labs</a><br>
+<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Homework" title="EECS268:Homework">Homework</a><br>
+<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Submission" title="EECS268:Submission">Submitting Work</a><br>
+</p>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Due_time"><span class="tocnumber">1</span> <span class="toctext">Due time</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Required_Files"><span class="tocnumber">2</span> <span class="toctext">Required Files</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Provided_Files"><span class="tocnumber">3</span> <span class="toctext">Provided Files</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Libraries_You_may_include"><span class="tocnumber">4</span> <span class="toctext">Libraries You may include</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Overview"><span class="tocnumber">5</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Requirements"><span class="tocnumber">6</span> <span class="toctext">Requirements</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Makefile"><span class="tocnumber">6.1</span> <span class="toctext">Makefile</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Pokemon_Class"><span class="tocnumber">6.2</span> <span class="toctext">Pokemon Class</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Colosseum_class"><span class="tocnumber">6.3</span> <span class="toctext">Colosseum class</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#main.cpp"><span class="tocnumber">6.4</span> <span class="toctext">main.cpp</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Dice_class"><span class="tocnumber">6.5</span> <span class="toctext">Dice class</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Sample_Run"><span class="tocnumber">7</span> <span class="toctext">Sample Run</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#How_to_use_an_input.txt_file"><span class="tocnumber">8</span> <span class="toctext">How to use an input.txt file</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Submission_instructions"><span class="tocnumber">9</span> <span class="toctext">Submission instructions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Creating_a_File_Archive_Using_Tar"><span class="tocnumber">9.1</span> <span class="toctext">Creating a File Archive Using Tar</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Emailing_Your_Submission"><span class="tocnumber">9.2</span> <span class="toctext">Emailing Your Submission</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#Rubric"><span class="tocnumber">9.3</span> <span class="toctext">Rubric</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Due_time">Due time</span></h2>
+<p><strong>This lab is due before your next lab session begins. If your lab starts, let's say, at 2pm on Thursday, you have until 1:59:59pm next Thursday to submit.</strong>
+<br>
+</p>
+<h2><span class="mw-headline" id="Required_Files">Required Files</span></h2>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Makefiles">Makefile</a>
+</li>
+<li> main.cpp
+</li>
+<li> Colosseum.h
+</li>
+<li> Colosseum.cpp
+</li>
+<li> Pokemon.h
+</li>
+<li> Pokemon.cpp
+</li>
+<li> <a rel="nofollow" class="external text" href="http://people.eecs.ku.edu/~jgibbons/eecs268/2015fall/labs/lab01/Dice.h">Dice.h</a> (code provided)
+</li>
+<li> <a rel="nofollow" class="external text" href="http://people.eecs.ku.edu/~jgibbons/eecs268/2015fall/labs/lab01/Dice.cpp">Dice.cpp</a> (code provided)
+</li>
+</ul>
+<h2><span class="mw-headline" id="Provided_Files">Provided Files</span></h2>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http://people.eecs.ku.edu/~jgibbons/eecs268/2015fall/labs/lab01/input.txt">input.txt</a>, sample input
+</li>
+<li> <a rel="nofollow" class="external text" href="http://people.eecs.ku.edu/~jgibbons/eecs268/2015fall/labs/lab01/results.txt">results.txt</a>, sample output
+</li>
+</ul>
+<h2><span class="mw-headline" id="Libraries_You_may_include">Libraries You may include</span></h2>
+<ul>
+<li> In Colosseum.h
+<ul>
+<li> iostream, string, Pokemon.h, Dice.h
+</li>
+</ul>
+</li>
+<li> In Pokemon.h
+<ul>
+<li> string
+</li>
+</ul>
+</li>
+<li> In main.cpp
+<ul>
+<li> iostream, string, Colosseum.h, Pokemon.h
+</li>
+</ul>
+</li>
+</ul>
+<h2><span class="mw-headline" id="Overview">Overview</span></h2>
+<p>Let's make a console based video game!  This is a two player game where two pokemon are created and fight each other to the death or to the draw.  Each player will get to define the name, hp, attack level, and defense level for their pokemon.  After each player makes a monster, randomly decide who goes first using a 2-sided die, then they will fight for a maximum of 10 rounds.  If either player dies during the game, the game must stop.  If they are both standing at the end, it's a draw.
+</p><p><i>Glossary</i>
+We'll not only be using dice in this lab, we'll be using nerdy terminology to refer to them. 
+d20: a 20 sided die (1-20)
+d6: a 6 sided die (standard die with 1-6)
+d8: an 8 sided die (1-8)
+d2: a 2 sided die (1 or 2)
+</p>
+<h2><span class="mw-headline" id="Requirements">Requirements</span></h2>
+<h3><span class="mw-headline" id="Makefile">Makefile</span></h3>
+<ul>
+<li> must compile the entire lab, include the Dice code.
+</li>
+<li> I highly recommend that you make your make file compile just your main.cpp, test it, then get it to compile the main and the Dice code, test it, add a couple more files and so on...
+</li>
+<li> <i>Compile and Test often!</i>  Make sure all your includes are working before you start implementing code.  Test after each method is implemented. 
+</li>
+<li> Don't try to code the entire lab then test for the first time! Doing so will most likely result in a monolith of compiler errors. 
+</li>
+<li> If you've added a loop, a control statement, or a simple function, stop! Test it!
+</li>
+<li> Here's a write on how to make a <a rel="nofollow" class="external text" href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Makefiles">Makefile</a>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Pokemon_Class">Pokemon Class</span></h3>
+<p>Private Member Variables
+</p>
+<ul>
+<li> int m_hp, the health points of the pokemon
+</li>
+<li> int m_attackLevel, the attack level of the pokemon
+</li>
+<li> int m_defenseLevel, the defense level of the pokemon
+</li>
+<li> string m_name, name of the pokemon
+</li>
+</ul>
+<p><br>
+Public Methods
+</p>
+<ul>
+<li> Pokemon()
+<ul>
+<li> Constructor
+</li>
+<li> Initializes all numeric data to zero and strings to ""
+</li>
+</ul>
+</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li> void reduceHP(int amount)
+<ul>
+<li> Reduces m_hp by the amount
+</li>
+<li> Does not prevent m_hp from becoming a negative value
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> Create get and set methods for HP, attackLevel, defenseLevel and name
+</li>
+<li> All get methods should be const.
+</li>
+</ul>
+<p>Example
+</p>
+<code><pre>//in header file
+int getHP() const;
+</pre></code>
+<code><pre>//in cpp file
+int Pokemon::getHP() const
+{
+   return(m_hp);
+}
+</pre></code>
+<h3><span class="mw-headline" id="Colosseum_class">Colosseum class</span></h3>
+<p>private members:
+</p>
+<ul>
+<li> Dice d20
+</li>
+<li> Dice d6
+</li>
+</ul>
+<p>public members:
+</p>
+<ul>
+<li> Colosseum()
+<ul>
+<li> Initializes Dice to appropriate sizes
+<ul>
+<li> e.g. d20 = Dice(20);
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li> void userBuild(Pokemon&amp; p)
+<ul>
+<li> sets all the values for name, hp, attackLevel, and defenseLevel or the Pokemon passed in
+</li>
+<li> the hp must be between 1-50
+</li>
+<li> the attackLevel+defenseLevel must be between 1-50
+</li>
+<li> you must keep prompting the user for good input
+</li>
+</ul>
+</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li> bool attack(const Pokemon&amp; attacker, Pokemon&amp; defender)
+<ul>
+<li> The attacker is trying to hit the defender
+</li>
+<li> Calculate attack and defense bonuses:
+<ul>
+<li> use d20 to roll random values for and attackBonus and a defenseBonus
+</li>
+</ul>
+</li>
+<li> Determine if the attack hits
+<ul>
+<li> if the attacker's attackLevel + attackBonus is greater than the defender's defenseLevel + defenseBonus the attack hits
+</li>
+</ul>
+</li>
+<li> Determine how much damage the attack does (if it hit)
+<ul>
+<li> roll three d6's, add them up, and that is the damage
+</li>
+</ul>
+</li>
+<li> Displays information about the attack
+<ul>
+<li> display all attack information as reflected in the sample runs
+</li>
+</ul>
+</li>
+<li> Determine if the player died from the attack
+<ul>
+<li> return true only if the opponent died because of the attack, otherwise returns false
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> void play(Pokemon&amp; p1, Pokemon&amp; p2)
+<ul>
+<li> Handles the 10 round fight between p1 and p2
+</li>
+<li> Uses a 2-sided die to decide who goes first
+</li>
+<li> Display round information and calls attack() to display attack information
+</li>
+<li> Determines when the game is over
+</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="main.cpp">main.cpp</span></h3>
+<ul>
+<li> int main()
+<ul>
+<li> declares two Pokemon, one Colosseum and any other variables you see fit
+</li>
+<li> Displays announcement to players to build their pokemon then...
+</li>
+<li> uses the Colosseum method to handle the building of pokemon
+</li>
+<li> calls play from the Colosseum class, passing in the two pokemon
+</li>
+<li> Repeat the building and playing of the game until the user wants to quit (see sample run)
+<ul>
+<li> Note: you'll be reusing the same instances of pokemon, but the userbuild method will redefine their values
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><span class="mw-headline" id="Dice_class">Dice class</span></h3>
+<p>I've provided the dice code in the links at the top of the page.  Things to note:
+</p>
+<ul>
+<li> The ifndef, define, endif block which will allow you to include a header file more than once without causing errors
+</li>
+<li> the random number implementation
+</li>
+<li> other samples of how to set up classes
+</li>
+<li> the commenting style is javadoc style. We'll talk more about that later
+</li>
+</ul>
+<h2><span class="mw-headline" id="Sample_Run">Sample Run</span></h2>
+<p>I've provide a sample input file for you to use and <b>sample</b> result files at the top of the page.  Remember, this game uses dice so your results will likely be different.
+</p>
+<h2><span class="mw-headline" id="How_to_use_an_input.txt_file">How to use an input.txt file</span></h2>
+<p>In the provided input.txt file, you can pass all the input to your program as if you were typing it in by hand.  Why?
+</p>
+<ul>
+<li> It's faster than manual input
+</li>
+<li> You can make custom test file for certain scenarios
+</li>
+</ul>
+<p>To use the file, from the console run:
+</p>
+<code><pre>yourLabDirector&gt; ./Lab01 &lt; input.txt
+</pre></code>
+<p>Note: since the input is coming from a file, <b>you won't see it displayed in the console</b> but it is being fed into the program.
+</p>
+<h2><span class="mw-headline" id="Submission_instructions">Submission instructions</span></h2>
+<p>Unless it your project is graded during the lab, send a tar file with all the necessary files (*.h, *.cpp, and makefile) in a tar file to your GTA email. Do not include any object (*.o) or executable file.
+</p>
+<h4><span class="mw-headline" id="Creating_a_File_Archive_Using_Tar">Creating a File Archive Using Tar</span></h4>
+<p>The standard Unix utility for created archived files is <tt><b>tar</b></tt>.  Tar files, often called <b>tarballs</b>, are like zip files.
+</p>
+<ol>
+<li>Create a folder to hold the files you will be sending in.  The folder should be named like <i>LastName-KUID-Assignment-Number</i>:
+<dl>
+<dd><tt>mkdir Smith-123456-Lab-01</tt>
+</dd>
+</dl>
+</li>
+<li>Now, copy the files you want to submit into the folder:
+</li>
+<li>Tar everything in that directory into a single file:
+<dl>
+<dd><tt>tar -cvzf Smith-123456-Lab-01.tar.gz Smith-123456-Lab-01</tt>
+</dd>
+<dd>That single command line is doing a number of things:
+<ul>
+<li> <tt>tar</tt> is the program you're using.
+</li>
+<li> <tt>-cvzf</tt> are the options you're giving to <tt>tar</tt> to tell it what to do.
+<ul>
+<li><tt>c</tt>: <b>create</b> a new tar file
+</li>
+<li><tt>v</tt>: operate in <b>verbose</b> mode (show the name of all the files)
+</li>
+<li><tt>z</tt>: <b>zip</b> up the files to make them smaller
+</li>
+<li><tt>f</tt>: create a <b>file</b>
+</li>
+</ul>
+</li>
+<li><tt>Smith-123456-Lab-01.tar.gz</tt>: the name of the file to create.  It is customary to add the <tt>.tar.gz</tt> extension to tarballs created with the <tt>z</tt> option.
+</li>
+<li><tt>Smith-123456-Lab-01</tt>: the directory to add to the tarball
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Please note that it is <b>your</b> responsibility to make sure that your tarball has the correct files.  You can view the contents of a tarball by using:
+</p>
+<dl>
+<dd><tt>tar -tvzf <i>filename.tar.gz</i></tt>
+</dd>
+</dl>
+<h4><span class="mw-headline" id="Emailing_Your_Submission">Emailing Your Submission</span></h4>
+<p>Once you have created the tarball with your submission files, email it to your TA.  The email subject line <strong>must</strong> look like "[EECS 268] <i>SubmissionName</i>":
+</p>
+<dl>
+<dd>[EECS 268] Lab 01
+</dd>
+</dl>
+<p>Note that the subject should be <i>exactly</i> like the line above.  Do not leave out any of the spaces, or the bracket characters ("[" and "]").  In the body of your email, include your name and student ID.
+</p>
+<h3><span class="mw-headline" id="Rubric">Rubric</span></h3>
+<p>Grades will be assigned according to the following criteria:
+</p>
+<ul>
+<li> [5pts] Email title, attachment
+</li>
+<li> [10pts] Commenting
+<ul>
+<li> File, author, date, purpose at the top of every file.
+</li>
+<li> pre and post conditions for every method signature in the header files
+</li>
+</ul>
+</li>
+<li> [5pts] Formatting
+<ul>
+<li> Standard indentation
+</li>
+</ul>
+</li>
+<li> [25pts] Pokemon class
+<ul>
+<li> [5pts] All member variables private
+</li>
+<li> [10pts] All set methods defined
+</li>
+<li> [10pts] All get methods defined and const
+</li>
+</ul>
+</li>
+<li> [40pts] Colosseum class
+<ul>
+<li> [20pts] play
+<ul>
+<li> Game end when either player dies or rounds are over
+</li>
+</ul>
+</li>
+<li> [10pts] userBuild
+</li>
+<li> [10pts] attack
+</li>
+</ul>
+</li>
+<li> [10pts] main class
+<ul>
+<li> Declares stack allocated Pokemon and Colosseum instances to drive the game
+</li>
+<li> This does not handle the game, it calls the Colosseum methods to do so
+</li>
+<li> Allows the user to repeat as desired
+</li>
+</ul>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+CPU time usage: 0.072 seconds
+Real time usage: 0.078 seconds
+Preprocessor visited node count: 102/1000000
+Preprocessor generated node count: 154/1000000
+Post‐expand include size: 608/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb-ittc_:pcache:idhash:2913-0!*!0!!en!*!* and timestamp 20150427023227
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&oldid=16678">https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&amp;oldid=16678</a>"				</div>
+												<div id="catlinks" class="catlinks catlinks-allhidden"></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-login"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=Special:UserLogin&returnto=EECS268%3ALab1" title="You are encouraged to log in; however, it is not mandatory [ctrl-option-o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./EECS268_Lab1 - ITTC_files/EECS268_Lab1 - ITTC.html" title="View the content page [ctrl-option-c]" accesskey="c">Article</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=Talk:EECS268:Lab1&action=edit&redlink=1" title="Discussion about the content page [ctrl-option-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label" tabindex="0"><span>Variants</span><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#" tabindex="-1"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./EECS268_Lab1 - ITTC_files/EECS268_Lab1 - ITTC.html">Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&action=edit" title="This page is protected.
+You can view its source [ctrl-option-e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&action=history" title="Past revisions of this page [ctrl-option-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" tabindex="0"><span>Actions</span><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#" tabindex="-1"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="https://wiki.ittc.ku.edu/ittc_wiki/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" placeholder="Search" title="Search ITTC [ctrl-option-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off">						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="./EECS268_Lab1 - ITTC_files/search-ltr.png" alt="Search" width="12" height="13"></button>								<input type="hidden" name="title" value="Special:Search">
+		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel" class="collapsible-nav">
+					<div id="p-logo" role="banner"><a style="background-image: url(/ittc_wiki/skins/common/images/jayhawk.png);" href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Main_Page" title="Visit the main page"></a></div>
+				<div class="portal first persistent" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+	<h3 id="p-navigation-label">Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Main_Page" title="Visit the main page [ctrl-option-z]" accesskey="z">Main Page</a></li>
+			<li id="n-portal"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/ITTC:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-currentevents"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Current_events" title="Find background information on current events">Current events</a></li>
+			<li id="n-recentchanges"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [ctrl-option-r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Special:Random" title="Load a random page [ctrl-option-x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal expanded" role="navigation" id="p-Related_Sites" aria-labelledby="p-Related_Sites-label">
+	<h3 id="p-Related_Sites-label" tabindex="2"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#">Related Sites</a></h3>
+	<div class="body" style="display: block;">
+		<ul>
+			<li id="n-ITTC"><a href="http://wiki.ittc.ku.edu/ittc/" rel="nofollow">ITTC</a></li>
+			<li id="n-Hybrid-Thread"><a href="http://wiki.ittc.ku.edu/hybridthread/" rel="nofollow">Hybrid Thread</a></li>
+			<li id="n-CSDL"><a href="http://wiki.ittc.ku.edu/csdl/" rel="nofollow">CSDL</a></li>
+			<li id="n-RC-Blast"><a href="http://wiki.ittc.ku.edu/rcblast/" rel="nofollow">RC Blast</a></li>
+			<li id="n-Lambda"><a href="http://wiki.ittc.ku.edu/lambda/" rel="nofollow">Lambda</a></li>
+			<li id="n-SLDG"><a href="http://www.ittc.ku.edu/Projects/SLDG/" rel="nofollow">SLDG</a></li>
+			<li id="n-RTR-JVM"><a href="http://wiki.ittc.ku.edu/rtrjvm/" rel="nofollow">RTR-JVM</a></li>
+			<li id="n-RC-Reading"><a href="http://wiki.ittc.ku.edu/rcreading/" rel="nofollow">RC Reading</a></li>
+			<li id="n-CogNet"><a href="http://wiki.ittc.ku.edu/cognet_wiki/" rel="nofollow">CogNet</a></li>
+			<li id="n-Intelligent-Informatics"><a href="http://wiki.ittc.ku.edu/intelligent_informatics/" rel="nofollow">Intelligent Informatics</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal collapsed" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+	<h3 id="p-tb-label" tabindex="3"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/EECS268:Lab1#">Toolbox</a></h3>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Special:WhatLinksHere/EECS268:Lab1" title="A list of all wiki pages that link here [ctrl-option-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Special:RecentChangesLinked/EECS268:Lab1" title="Recent changes in pages linked from this page [ctrl-option-k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/Special:SpecialPages" title="A list of all special pages [ctrl-option-q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&printable=yes" rel="alternate" title="Printable version of this page [ctrl-option-p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&oldid=16678" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php?title=EECS268:Lab1&action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 February 2015, at 11:05.</li>
+											<li id="footer-info-viewcount">This page has been accessed 4,020 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/ITTC:Privacy_policy" title="ITTC:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/ITTC:About" title="ITTC:About">About ITTC</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.ittc.ku.edu/ittc_wiki/index.php/ITTC:General_disclaimer" title="ITTC:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="https://www.mediawiki.org/"><img src="./EECS268_Lab1 - ITTC_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<!-- Served in 0.359 secs. -->
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
